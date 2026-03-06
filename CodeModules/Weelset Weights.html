@@ -1,0 +1,205 @@
+<div class="wheel-weight-calculator">
+
+<h2>Wheelset Weights</h2>
+
+<div class="selectors">
+
+<label>
+Rim
+<select id="rim"></select>
+</label>
+
+<label>
+Size
+<select id="size"></select>
+</label>
+
+<label>
+Brake Mount
+<select id="brake"></select>
+</label>
+
+</div>
+
+<div class="weights">
+
+<div>
+<span class="label">Complete</span>
+<span id="completeWeight">--</span> g
+</div>
+
+<div>
+<span class="label">Front</span>
+<span id="frontWeight">--</span> g
+</div>
+
+<div>
+<span class="label">Rear</span>
+<span id="rearWeight">--</span> g
+</div>
+
+</div>
+
+</div>
+
+
+<style>
+
+.wheel-weight-calculator{
+max-width:600px;
+margin:auto;
+}
+
+.selectors{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+margin-bottom:24px;
+}
+
+label{
+display:flex;
+flex-direction:column;
+font-size:14px;
+}
+
+select{
+padding:8px;
+font-size:16px;
+}
+
+.weights{
+display:flex;
+justify-content:space-between;
+font-size:20px;
+font-weight:600;
+text-align:center;
+}
+
+.weights .label{
+display:block;
+font-size:14px;
+font-weight:400;
+color:#666;
+}
+
+</style>
+
+
+<script>
+
+let data = []
+
+const rimSelect = document.getElementById("rim")
+const sizeSelect = document.getElementById("size")
+const brakeSelect = document.getElementById("brake")
+
+const completeEl = document.getElementById("completeWeight")
+const frontEl = document.getElementById("frontWeight")
+const rearEl = document.getElementById("rearWeight")
+
+
+/*
+Load JSON file
+Replace with your actual URL
+*/
+
+fetch("https://nobl-local.staging/wp-content/uploads/2026/03/EthosSignature__Wheelset-Weights.json")
+.then(res => res.json())
+.then(json => {
+
+data = json
+
+init()
+
+})
+
+
+function init(){
+
+populateRims()
+updateOptions()
+updateWeights()
+
+rimSelect.addEventListener("change",handleChange)
+sizeSelect.addEventListener("change",handleChange)
+brakeSelect.addEventListener("change",updateWeights)
+
+}
+
+
+function populateRims(){
+
+const rims = [...new Set(data.map(d => d["Rim"]))]
+
+rimSelect.innerHTML = rims
+.map(r => `<option value="${r}">${r}</option>`)
+.join("")
+
+}
+
+
+function handleChange(){
+
+updateOptions()
+updateWeights()
+
+}
+
+
+function updateOptions(){
+
+const selectedRim = rimSelect.value
+
+const rimData = data.filter(d => d["Rim"] === selectedRim)
+
+const sizes = [...new Set(rimData.map(d => d["Rim Sizes"]))]
+
+sizeSelect.innerHTML = sizes
+.map(s => `<option value="${s}">${s}</option>`)
+.join("")
+
+const selectedSize = sizeSelect.value
+
+const brakeOptions = rimData
+.filter(d => d["Rim Sizes"] === selectedSize)
+.map(d => d["Brake Mount"])
+
+const brakes = [...new Set(brakeOptions)]
+
+brakeSelect.innerHTML = brakes
+.map(b => `<option value="${b}">${b}</option>`)
+.join("")
+
+}
+
+
+function updateWeights(){
+
+const rim = rimSelect.value
+const size = sizeSelect.value
+const brake = brakeSelect.value
+
+const match = data.find(d =>
+d["Rim"] === rim &&
+d["Rim Sizes"] === size &&
+d["Brake Mount"] === brake
+)
+
+if(!match){
+
+completeEl.textContent="--"
+frontEl.textContent="--"
+rearEl.textContent="--"
+
+return
+
+}
+
+completeEl.textContent = match["Wheelset weight (g)"]
+frontEl.textContent = match["Front Weight (g)"]
+rearEl.textContent = match["Rear Weight (g)"]
+
+}
+
+</script>
