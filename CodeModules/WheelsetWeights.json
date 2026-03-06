@@ -1,0 +1,231 @@
+[
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos SL 180",
+    "Hub": "DT180",
+    "Brake Mount": "CL",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 993,
+    "Front Weight (g)": 451,
+    "Rear Weight (g)": 542
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos SL",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "CL",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1033,
+    "Front Weight (g)": 467,
+    "Rear Weight (g)": 566
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos SL",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1078,
+    "Front Weight (g)": 492,
+    "Rear Weight (g)": 586
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos XC",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "CL",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1175,
+    "Front Weight (g)": 493,
+    "Rear Weight (g)": 682
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos XC",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1220,
+    "Front Weight (g)": 518,
+    "Rear Weight (g)": 702
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Trail",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "CL",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1338,
+    "Front Weight (g)": 582,
+    "Rear Weight (g)": 756
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Trail",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1383,
+    "Front Weight (g)": 607,
+    "Rear Weight (g)": 776
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Enduro",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "CL",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1551,
+    "Front Weight (g)": 686,
+    "Rear Weight (g)": 865
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Enduro",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1596,
+    "Front Weight (g)": 711,
+    "Rear Weight (g)": 885
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Enduro",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "CL",
+    "Rim Sizes": "Mullet",
+    "Wheelset weight (g)": 1541,
+    "Front Weight (g)": 686,
+    "Rear Weight (g)": 855
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Enduro",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "Mullet",
+    "Wheelset weight (g)": 1586,
+    "Front Weight (g)": 711,
+    "Rear Weight (g)": 875
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Enduro",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "27.5",
+    "Wheelset weight (g)": 1656,
+    "Front Weight (g)": 781,
+    "Rear Weight (g)": 875
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos Enduro",
+    "Hub": "Ethos Ti70",
+    "Brake Mount": "CL",
+    "Rim Sizes": "27.5",
+    "Wheelset weight (g)": 1612,
+    "Front Weight (g)": 757,
+    "Rear Weight (g)": 855
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos HD",
+    "Hub": "Erase",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1937,
+    "Front Weight (g)": 919,
+    "Rear Weight (g)": 1018
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos HD",
+    "Hub": "Erase",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "Mullet",
+    "Wheelset weight (g)": 1927,
+    "Front Weight (g)": 919,
+    "Rear Weight (g)": 1008
+  },
+  {
+    "Series": "Ethos",
+    "Rim": "Ethos HD",
+    "Hub": "Erase",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "27.5",
+    "Wheelset weight (g)": 1917,
+    "Front Weight (g)": 909,
+    "Rear Weight (g)": 1008
+  },
+  {
+    "Series": "Signature",
+    "Rim": "Signature 36",
+    "Hub": "Hope Pro 5",
+    "Brake Mount": "CL",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1536,
+    "Front Weight (g)": 692,
+    "Rear Weight (g)": 844
+  },
+  {
+    "Series": "Signature",
+    "Rim": "Signature 36",
+    "Hub": "Hope Pro 5",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1612,
+    "Front Weight (g)": 743,
+    "Rear Weight (g)": 869
+  },
+  {
+    "Series": "Signature",
+    "Rim": "Signature 38",
+    "Hub": "Hope Pro 5",
+    "Brake Mount": "CL",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1914,
+    "Front Weight (g)": 881,
+    "Rear Weight (g)": 1033
+  },
+  {
+    "Series": "Signature",
+    "Rim": "Signature 38",
+    "Hub": "Hope Pro 5",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "29",
+    "Wheelset weight (g)": 1990,
+    "Front Weight (g)": 932,
+    "Rear Weight (g)": 1058
+  },
+  {
+    "Series": "Signature",
+    "Rim": "Signature 38",
+    "Hub": "Hope Pro 5",
+    "Brake Mount": "CL",
+    "Rim Sizes": "Mullet",
+    "Wheelset weight (g)": 1889,
+    "Front Weight (g)": 881,
+    "Rear Weight (g)": 1008
+  },
+  {
+    "Series": "Signature",
+    "Rim": "Signature 38",
+    "Hub": "Hope Pro 5",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "Mullet",
+    "Wheelset weight (g)": 1965,
+    "Front Weight (g)": 932,
+    "Rear Weight (g)": 1033
+  },
+  {
+    "Rim": "Signature 38",
+    "Hub": "Hope Pro 5",
+    "Brake Mount": "6-Bolt",
+    "Rim Sizes": "27.5",
+    "Wheelset weight (g)": 1940,
+    "Front Weight (g)": 907,
+    "Rear Weight (g)": 1033
+  }
+]
