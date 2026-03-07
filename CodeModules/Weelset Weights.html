@@ -135,16 +135,30 @@ populateRims()
 updateOptions()
 updateWeights()
 
-seriesSelect.addEventListener("change",handleChange)
-rimSelect.addEventListener("change",handleChange)
-sizeSelect.addEventListener("change",handleChange)
-brakeSelect.addEventListener("change",updateWeights)
+seriesSelect.addEventListener("change",handleSeriesChange)
+rimSelect.addEventListener("change",handleRimChange)
+sizeSelect.addEventListener("change",handleSizeChange)
+brakeSelect.addEventListener("change",handleBrakeChange)
+
+}
+
+function populateSeries(){
+
+const series = [...new Set(data.map(d => d["Series"]))]
+
+seriesSelect.innerHTML = series
+.map(s => `<option value="${s}">${s}</option>`)
+.join("")
+
+selection.series = series[0]
 
 }
 
 
 
 function populateRims(){
+
+const previousRim = selection.rim
 
 const rims = [...new Set(
   data
@@ -156,17 +170,14 @@ rimSelect.innerHTML = rims
 .map(r => `<option value="${r}">${r}</option>`)
 .join("")
 
-selection.rim = rims[0]
-
+selection.rim = rims.includes(previousRim) ? previousRim : (rims[0] ?? null)
+rimSelect.value = selection.rim ?? ""
 }
 
 
-function handleChange(){
+function handleSeriesChange(){
 
 selection.series = seriesSelect.value
-selection.rim = rimSelect.value
-selection.size = sizeSelect.value
-selection.brake = brakeSelect.value
 
 populateRims()
 updateOptions()
@@ -174,12 +185,36 @@ updateWeights()
 
 }
 
+function handleRimChange(){
+
+selection.rim = rimSelect.value
+updateOptions()
+updateWeights()
+
+}
+
+function handleSizeChange(){
+
+selection.size = sizeSelect.value
+updateOptions()
+updateWeights()
+
+}
+
+function handleBrakeChange(){
+
+selection.brake = brakeSelect.value
+updateWeights()
+
+}
+
 
 function updateOptions(){
 
-const selectedRim = rimSelect.value
-
-const rimData = data.filter(d => d["Rim"] === selectedRim)
+const rimData = data.filter(d =>
+  d["Series"] === selection.series &&
+  d["Rim"] === selection.rim
+)
 
 const sizes = [...new Set(rimData.map(d => d["Rim Sizes"]))]
 
@@ -187,10 +222,11 @@ sizeSelect.innerHTML = sizes
 .map(s => `<option value="${s}">${s}</option>`)
 .join("")
 
-const selectedSize = sizeSelect.value
+selection.size = sizes.includes(selection.size) ? selection.size : (sizes[0] ?? null)
+sizeSelect.value = selection.size ?? ""
 
 const brakeOptions = rimData
-.filter(d => d["Rim Sizes"] === selectedSize)
+.filter(d => d["Rim Sizes"] === selection.size)
 .map(d => d["Brake Mount"])
 
 const brakes = [...new Set(brakeOptions)]
@@ -199,14 +235,13 @@ brakeSelect.innerHTML = brakes
 .map(b => `<option value="${b}">${b}</option>`)
 .join("")
 
+selection.brake = brakes.includes(selection.brake) ? selection.brake : (brakes[0] ?? null)
+brakeSelect.value = selection.brake ?? ""
+
 }
 
 
 function updateWeights(){
-
-const rim = rimSelect.value
-const size = sizeSelect.value
-const brake = brakeSelect.value
 
 const match = data.find(d =>
   d["Series"] === selection.series &&
