@@ -120,7 +120,9 @@ function init(){
 populateRims()
 updateOptions()
 updateWeights()
+createOptions("seriesOptions", getUnique("Series"), "series")
 
+selection.series = getUnique("Series")[0]
 rimSelect.addEventListener("change",handleChange)
 sizeSelect.addEventListener("change",handleChange)
 brakeSelect.addEventListener("change",updateWeights)
@@ -128,9 +130,14 @@ brakeSelect.addEventListener("change",updateWeights)
 }
 
 
+
 function populateRims(){
 
-const rims = [...new Set(data.map(d => d["Rim"]))]
+const rims = [...new Set(
+  data
+    .filter(d => d["Series"] === selection.series)
+    .map(d => d["Rim"])
+)]
 
 rimSelect.innerHTML = rims
 .map(r => `<option value="${r}">${r}</option>`)
@@ -181,9 +188,10 @@ const size = sizeSelect.value
 const brake = brakeSelect.value
 
 const match = data.find(d =>
-d["Rim"] === rim &&
-d["Rim Sizes"] === size &&
-d["Brake Mount"] === brake
+  d["Series"] === selection.series &&
+  d["Rim"] === selection.rim &&
+  d["Rim Sizes"] === selection.size &&
+  d["Brake Mount"] === selection.brake
 )
 
 if(!match){
