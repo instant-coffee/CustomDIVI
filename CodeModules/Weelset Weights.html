@@ -5,6 +5,11 @@
 <div class="selectors">
 
 <label>
+Series
+<select id="series"></select>
+</label>
+
+<label>
 Rim
 <select id="rim"></select>
 </label>
@@ -90,6 +95,14 @@ color:#666;
 
 let data = []
 
+const selection = {
+series: null,
+rim: null,
+size: null,
+brake: null
+}
+
+const seriesSelect = document.getElementById("series")
 const rimSelect = document.getElementById("rim")
 const sizeSelect = document.getElementById("size")
 const brakeSelect = document.getElementById("brake")
@@ -104,7 +117,7 @@ Load JSON file
 Replace with your actual URL
 */
 
-fetch("https://nobl-local.staging/wp-content/uploads/2026/03/EthosSignature__Wheelset-Weights.json")
+fetch("https://nobl-local.staging/wp-content/uploads/2026/03/WheelsetWeights.json")
 .then(res => res.json())
 .then(json => {
 
@@ -117,12 +130,12 @@ init()
 
 function init(){
 
+populateSeries()
 populateRims()
 updateOptions()
 updateWeights()
-createOptions("seriesOptions", getUnique("Series"), "series")
 
-selection.series = getUnique("Series")[0]
+seriesSelect.addEventListener("change",handleChange)
 rimSelect.addEventListener("change",handleChange)
 sizeSelect.addEventListener("change",handleChange)
 brakeSelect.addEventListener("change",updateWeights)
@@ -143,11 +156,19 @@ rimSelect.innerHTML = rims
 .map(r => `<option value="${r}">${r}</option>`)
 .join("")
 
+selection.rim = rims[0]
+
 }
 
 
 function handleChange(){
 
+selection.series = seriesSelect.value
+selection.rim = rimSelect.value
+selection.size = sizeSelect.value
+selection.brake = brakeSelect.value
+
+populateRims()
 updateOptions()
 updateWeights()
 
