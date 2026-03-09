@@ -56,7 +56,7 @@ Brake Mount
 <style>
 
 .wheel-weight-calculator{
-max-width:600px;
+max-width:1200px;
 margin:auto;
 }
 
@@ -334,6 +334,7 @@ function updateComparisonBars(){
 
 const filteredData = data.filter(d =>
   d["Series"] === selection.series &&
+  d["Rim Sizes"] === selection.size &&
   d["Brake Mount"] === selection.brake
 )
 
